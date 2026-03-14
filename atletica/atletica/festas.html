@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sigma Night | A Festa</title>
+    <link rel="stylesheet" href="festas.css">
+</head>
+<body>
+
+    <div class="container">
+        <p style="color: var(--rosa)">ATLÉTICA SIGMA APRESENTA:</p>
+        <h1 class="titulo-festa">RITUAL ODIN</h1>
+        <p class="data-festa">25 OUTUBRO | 22:00H</p>
+
+        <div id="countdown">
+            <div class="tempo-box"><span id="days">00</span>DIAS</div>
+            <div class="tempo-box"><span id="hours">00</span>HORAS</div>
+            <div class="tempo-box"><span id="minutes">00</span>MIN</div>
+        </div>
+
+        <a href="https://link-do-ingresso.com" class="btn-ingresso">GARANTIR MEU LUGAR</a>
+
+        <div class="info-extra">
+            <div class="info-item">
+                <h4>LOCAL</h4>
+                <p>Halla de Valhalla - Ribeirão Preto</p>
+            </div>
+            <div class="info-item">
+                <h4>OPEN BAR</h4>
+                <p>Cerveja, Gummy e Hidromel Tech</p>
+            </div>
+            <div class="info-item">
+                <h4>ATRAÇÕES</h4>
+                <p>DJ Corvo Negro & Banda Sigma</p>
+            </div>
+            <div class="info-item">
+                <h4>DRESS CODE</h4>
+                <p>Preto e Neon</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Configurar a data da festa aqui
+        const dataEvento = new Date("Oct 25, 2026 22:00:00").getTime();
+
+        const atualizarContador = setInterval(function() {
+            const agora = new Date().getTime();
+            const distancia = dataEvento - agora;
+
+            const dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
+            const horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
+
+            document.getElementById("days").innerHTML = dias;
+            document.getElementById("hours").innerHTML = horas;
+            document.getElementById("minutes").innerHTML = minutos;
+
+            if (distancia < 0) {
+                clearInterval(atualizarContador);
+                document.getElementById("countdown").innerHTML = "É HOJE!";
+            }
+        }, 1000);
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,106 @@
+/* Variáveis de Cores (Personalize com as cores da sua atlética) */
+        :root {
+    --bg-dark: #0a0f1e;          /* Fundo total */
+    --bg-card: #0d1a2d;          /* Fundo dos cards de esportes */
+    --cor-primaria: #ff007f;     /* O rosa da "Diretoria" */
+    --cor-secundaria: #00f2ff;   /* O brilho neon do Odin */
+    --text-light: #f4f4f4;       /* Texto branco/gelo */
+    --text-muted: #4a5d7a;       /* Texto de menor importância */
+}
+
+        body {
+            font-family: 'Arial Black', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            margin: 0;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px 5%;
+            background: rgba(0,0,0,0.8);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        /* Banner Principal */
+        .hero {
+            height: 60vh;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.2), var(--bg-dark)), 
+                        url('#');
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .hero h1 { font-size: 4rem; text-transform: uppercase; color: var(--cor-secundaria); }
+
+        /* Grid de Modalidades */
+        .secao-titulo { text-align: center; margin-top: 50px; color: var(--cor-primaria); }
+
+        .modalidades {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        padding: 40px 5%;
+    }
+
+    .card-esporte {
+        background: #0d1a2d; /* Azul Meia-Noite da imagem */
+        border: 2px solid #4a5d7a;
+        border-bottom: 5px solid #ff007f; /* Rosa Choque principal */
+        padding: 30px 20px;
+        border-radius: 12px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+        color: #f4f4f4;
+        text-align: center;
+        font-family: 'Arial Black', sans-serif;
+    }
+
+    /* Efeito de Hover (Brilho Neon) */
+    .card-esporte:hover {
+        transform: translateY(-8px);
+        border-color: #00f2ff; /* Ciano Neon */
+        box-shadow: 0 0 20px rgba(0, 242, 255, 0.4), 
+                    0 0 40px rgba(255, 0, 127, 0.2);
+        background: #162a45;
+    }
+
+    .card-esporte h3 {
+        margin: 0;
+        color: #00f2ff; /* Ciano para títulos */
+        letter-spacing: 2px;
+        font-size: 1.5rem;
+    }
+
+    .card-esporte p {
+        margin-top: 10px;
+        color: #4a5d7a;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+    }
+
+    /* Reset de estilos de botão padrão */
+    button.card-esporte {
+        width: 100%;
+        outline: none;
+    }
+
+        /* Botão de Sócio */
+        .cta-socio {
+            background: var(--cor-secundaria);
+            color: #000;
+            padding: 15px 30px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 50px;
+            display: inline-block;
+            margin-top: 20px;
+        }
