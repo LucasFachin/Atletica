@@ -1,0 +1,208 @@
+/* Variáveis de Cores (Personalize com as cores da sua atlética) */
+        :root {
+    --bg-dark: #0a0f1e;          /* Fundo total */
+    --bg-card: #0d1a2d;          /* Fundo dos cards de esportes */
+    --cor-primaria: #ff007f;     /* O rosa da "Diretoria" */
+    --cor-secundaria: #00f2ff;   /* O brilho neon do Odin */
+    --text-light: #f4f4f4;       /* Texto branco/gelo */
+    --text-muted: #4a5d7a;       /* Texto de menor importância */
+}
+
+       /* 1. Ajuste do Body para a cor desejada */
+body {
+    font-family: 'Arial Black', sans-serif;
+    background-color: var(--bg-card); /* Azul escuro definido nas variáveis */
+    color: var(--text-light);
+    margin: 0;
+}
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px 5%;
+            background: rgba(0,0,0,0.8);
+            position: sticky;
+            top: 0;
+            z-index: 150;
+        }
+
+        /* Banner Principal */
+        .hero {
+            height: 40vh;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.2), var(--bg-card)), 
+                        url('https://unsplash.com');
+            background-size: cover;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            padding-top: 10px;
+        }
+
+        .hero h1 { font-size: 2rem; text-transform: uppercase; color: var(--cor-secundaria); margin-top: 70px; }/* Título principal */
+
+        /* Grid de Modalidades */
+        .secao-titulo { text-align: center; margin-top: 50px; color: var(--cor-primaria); }
+
+        .modalidades{
+            display: flex;
+            grid-template-columns: repeat(2, 320px);
+            gap: 300px;
+            justify-content: center;
+            
+
+            margin-top: -80px; /* controla o quanto sobe */
+
+
+}
+
+.card-esporte {
+    border-left: 8px solid var(--cor-secundaria);
+    border-bottom: 10px solid var(--cor-secundaria);
+    border-radius: 8px;
+    overflow: visible; /* Mudado de hidden para visible */
+    width: 750px;
+    height: 450px; 
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+        .card-esporte:hover {
+            transform: scale(1.05);
+            background: var(--cor-primaria);
+        }
+
+        .card-esporte.show{
+
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+ /* 3. Ajuste do H3 para posicionar abaixo do card amarelo */
+.card-esporte h3 {
+    margin-top: 20px; /* Espaço após a imagem */
+    text-align: center;
+    color: white;
+    width: 100%;
+    position: absolute;
+    top: 100%; /* Joga o texto para baixo do limite do card */
+}
+
+.carrossel{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.carrossel img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.carrossel img.active{
+    opacity: 1;
+}
+
+.carrossel button{
+
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    background: transparent;
+    border: none;
+    color: white;
+
+    font-size: 30px;
+    padding: 10px;
+
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.prev{ left: 10px; }
+.next{ right: 10px; }
+
+
+.eventos-futuros {
+    margin-top: 180px; /* Aumentado para não bater no H3 */
+    padding: 60px 10%;
+    background: transparent; /* Deixa o fundo do body (azul) aparecer */
+}
+
+.eventos-futuros h2{
+
+    text-align: center;
+    margin-bottom: 40px;
+
+    color: var(--cor-secundaria);
+}
+
+.tabela-eventos{
+
+    width: 100%;
+    border-collapse: collapse;
+
+    background: var(--bg-card);
+
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.tabela-eventos thead{
+
+    background: var(--cor-primaria);
+    color: white;
+}
+
+.tabela-eventos th{
+
+    padding: 15px;
+    text-align: center;
+}
+
+.tabela-eventos td{
+
+    padding: 15px;
+    text-align: center;
+
+    border-bottom: 1px solid #333;
+}
+
+.tabela-eventos tr:hover{
+
+    background: rgba(255,255,255,0.05);
+}
+
+.btn-presenca{
+
+    padding: 8px 15px;
+    background: var(--cor-secundaria);
+    color: black;
+
+    text-decoration: none;
+    border-radius: 5px;
+
+    font-weight: bold;
+}
+
+.btn-ingresso{
+
+    padding: 8px 15px;
+    background: var(--cor-primaria);
+    color: white;
+
+    text-decoration: none;
+    border-radius: 5px;
+
+    font-weight: bold;
+}

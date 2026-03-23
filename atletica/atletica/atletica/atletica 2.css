@@ -1,0 +1,98 @@
+*{
+box-sizing:border-box;
+}
+
+body{
+margin:0;
+font-family:Arial, sans-serif;
+height:100vh;
+background: url("imagens/pika.jpeg") no-repeat center center fixed;
+background-size: cover;
+display:flex;
+justify-content:center;
+align-items:center;
+color:white;
+}
+
+#inicio{
+text-align:center;
+position: relative;
+}
+
+.botao{
+padding:18px 40px;
+font-size:20px;
+border:none;
+border-radius:10px;
+cursor:pointer;
+color:white;
+background:linear-gradient(90deg,#00d4ff,#b04bff);
+box-shadow:0 0 20px rgba(0,212,255,0.5);
+}
+
+.botao:hover{
+transform:scale(1.05);
+}
+
+/* BOTÃO VOLTAR */
+.btn-voltar {
+position: fixed;
+bottom: 20px;
+left: 20px;
+padding: 10px 15px;
+background: linear-gradient(90deg,#00d4ff,#b04bff);
+border: none;
+border-radius: 8px;
+color: white;
+cursor: pointer;
+box-shadow: 0 0 15px rgba(0,212,255,0.4);
+}
+
+.btn-voltar:hover {
+transform: scale(1.05);
+}
+
+#cadastro{
+display:none;
+justify-content:center;     /* Cadastro */
+align-items:center;
+width:100%;
+height:100vh;
+}
+
+.form-box{
+background:rgba(6,26,43,0.85);
+padding:35px;
+border-radius:12px;
+width:340px;
+border:1px solid #00d4ff;
+box-shadow:0 0 20px rgba(0,212,255,0.4);
+text-align:center;
+}
+
+.form-box h2{
+color:#00d4ff;
+margin-bottom:20px;
+}
+
+.form-box input{
+width:100%;
+padding:12px;
+margin:10px 0;
+border-radius:6px;
+border:1px solid #0d2f4a;
+background:#02111d;
+color:white;
+}
+
+.form-box button{
+width:100%;
+padding:12px;
+margin-top:12px;
+background:linear-gradient(90deg,#00d4ff,#b04bff);
+border:none;
+border-radius:6px;
+color:white;
+cursor:pointer;
+font-size:16px;
+}
