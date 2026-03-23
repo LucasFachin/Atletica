@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atlética Universitária | Dashboard</title>
+    <link rel="stylesheet" href="visualfestas.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">ATLÉTICA SIGMA</div>
+        <nav>
+            <a href="#" style="color: white; margin-left: 20px;">JUNTE-SE A NÓS</a>
+            <a href="#" style="color: white; margin-left: 20px;">Loja</a>
+            <a href="#" style="color: white; margin-left: 20px;">Sócio</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+    <div>
+        <h1>ALGUNS DOS EVENTOS DA ATLETICA</h1>
+    </div> 
+</section>
+
+
+<div class="modalidades">
+
+    <div class="card-esporte">
+
+        <div class="carrossel">
+            <img src="imagens/arq1.jpg" class="active">
+            <img src="imagens/arq2.jpg">
+            <img src="imagens/arq3.jpg">
+
+            <button class="prev">❮</button>
+            <button class="next">❯</button>
+        </div>
+
+        <h3>ARQ</h3>
+
+    </div>
+
+
+    <div class="card-esporte">
+
+        <div class="carrossel">
+            <img src="imagens/coposujo1.png" class="active">
+            <img src="imagens/coposujo2.png">
+            <img src="imagens/coposujo3.png">
+
+            <button class="prev">❮</button>
+            <button class="next">❯</button>
+        </div>
+
+        <h3>Copo Sujo</h3>
+
+    </div>
+
+</div>
+
+<script>
+
+const carrosseis = document.querySelectorAll(".carrossel");
+
+carrosseis.forEach(carrossel => {
+
+    const images = carrossel.querySelectorAll("img");
+    const prev = carrossel.querySelector(".prev");
+    const next = carrossel.querySelector(".next");
+
+    let index = 0;
+
+    function showImage(i){
+        images.forEach(img => img.classList.remove("active"));
+        images[i].classList.add("active");
+    }
+
+    next.addEventListener("click", () => {
+        index = (index + 1) % images.length;
+        showImage(index);
+    });
+
+    prev.addEventListener("click", () => {
+        index = (index - 1 + images.length) % images.length;
+        showImage(index);
+    });
+
+    setInterval(() => {
+        index = (index + 1) % images.length;
+        showImage(index);
+    },10000);
+
+});
+
+</script>
+
+<script>
+
+const cards = document.querySelectorAll(".card-esporte");
+
+window.addEventListener("scroll", () => {
+
+    const trigger = window.innerHeight * 0.85;
+
+    cards.forEach(card => {
+
+        const top = card.getBoundingClientRect().top;
+
+        if(top < trigger){
+            card.classList.add("show");
+        }
+
+    });
+
+});
+
+</script>
+
+<section class="eventos-futuros">
+
+    <h2>Eventos Futuros da Atlética</h2>
+
+    <table class="tabela-eventos">
+
+        <thead>
+            <tr>
+                <th>Evento</th>
+                <th>Data</th>
+                <th>Marque que sua Presença</th>
+                <th>Ingressos</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            <tr>
+                <td>ARQ</td>
+                <td>18/03/2026</td>
+                <td>
+                    <a href="https://forms.google.com" target="_blank" class="btn-presenca">
+                        Marcar presença
+                    </a>
+                </td>
+                <td>
+                    <a href="https://ingresse.com/arq-ribeirao-preto/" target="_blank" class="btn-ingresso">
+                        Comprar
+                    </a>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Copo Sujo</td>
+                <td>02/04/2026</td>
+                <td>
+                    <a href="https://forms.google.com" target="_blank" class="btn-presenca">
+                        Marcar presença
+                    </a>
+                </td>
+
+                <td>
+
+                </td>
+            </tr>
+
+        </tbody>
+
+    </table>
+
+</section>
+    
+</body>
+</html>
